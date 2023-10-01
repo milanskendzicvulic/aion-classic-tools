@@ -1,5 +1,7 @@
 <script lang="ts">
 	import "../styles/app.scss";
+
+	import { base } from "$app/paths";
 </script>
 
 <header class="bg-neutral-950 border-b border-neutral-500 h-12 flex items-center">
@@ -9,13 +11,13 @@
 				<li>
 					<a
 						class="text-white font-semibold px-2 py-1 rounded-md hover:bg-neutral-800 active:bg-neutral-900"
-						href="/">Enchantment Calculator</a
+						href="{base}/">Enchantment Calculator</a
 					>
 				</li>
 				<li>
 					<a
 						class="text-white font-semibold px-2 py-1 rounded-md hover:bg-neutral-800 active:bg-neutral-900"
-						href="/enchantment-simulator">Enchantment Simulator</a
+						href="{base}/enchantment-simulator">Enchantment Simulator</a
 					>
 				</li>
 			</ul>
