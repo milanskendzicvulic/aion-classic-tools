@@ -44,14 +44,17 @@ function enchantmentInfo(
 
 	for (let i = 0; i < stoneCount; i++) {
 		const enchantmentStone = firstStone + i;
-		let enchantmentSuccessChance = modifier * i;
 
-		enchantmentSuccessChance = Math.min(enchantmentSuccessChance, maxEnchantRate);
+		if (enchantmentStone > 0) {
+			let enchantmentSuccessChance = modifier * i;
 
-		result.push({
-			enchantmentStone: enchantmentStone,
-			enchantmentSuccessChance: enchantmentSuccessChance
-		});
+			enchantmentSuccessChance = Math.min(enchantmentSuccessChance, maxEnchantRate);
+
+			result.push({
+				enchantmentStone: enchantmentStone,
+				enchantmentSuccessChance: enchantmentSuccessChance
+			});
+		}
 	}
 
 	return result;
