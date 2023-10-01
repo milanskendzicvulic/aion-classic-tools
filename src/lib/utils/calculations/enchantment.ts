@@ -26,7 +26,8 @@ function enchantmentInfo(
 
 	const rarity = itemRarities[itemRarity];
 
-	if (!rarity || !itemLv || !enchantmentLv) {
+	// TODO: do a better check, this seems hacky
+	if (!rarity || isNaN(itemLv) || isNaN(enchantmentLv)) {
 		return result;
 	}
 
