@@ -24,6 +24,7 @@
 	let selectedItemLv: string = "";
 	let selectedEnchLv: string = "";
 
+	// TODO: better way to do parsing
 	$: results = enchantmentInfo(
 		selectedItemRarity,
 		parseInt(selectedItemLv),
