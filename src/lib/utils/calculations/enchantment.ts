@@ -15,7 +15,6 @@ type EnchantmentInfo = {
 	enchantmentSuccessChance: number;
 };
 
-// TODO: document the thing
 // TODO: add options for sorting
 function enchantmentInfo(
 	itemRarity: string,
