@@ -84,8 +84,6 @@ function calculateEnchantmentInfo(
 		result.reverse();
 	}
 
-	console.log(result);
-
 	return result;
 }
 
