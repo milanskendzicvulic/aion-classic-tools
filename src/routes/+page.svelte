@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { enchantmentInfo } from "$lib/utils/calculations/enchantment";
+	import { calculateEnchantmentInfo } from "$lib/utils/calculations/enchantment";
 
 	// max item level to be displayed in the html select
 	const MAX_ITEM_LEVEL: number = 55;
 
 	// max item enchantment level to be displayed in the html select
-	// TODO: Different levels for different rarities
+	// TODO(#4): Different levels for different rarities
 	const MAX_ITEM_ENCH_LEVEL: number = 15;
 
 	// Is used to display item levels in the select, in descending order.
@@ -20,16 +20,19 @@
 		(_, i) => MAX_ITEM_ENCH_LEVEL - i - 1
 	);
 
-	let selectedItemRarity: string = "";
+	let selectedItemRarity = "";
 	let selectedItemLv: string = "";
 	let selectedEnchLv: string = "";
 
 	// TODO: better way to do parsing
-	$: results = enchantmentInfo(
+	$: results = calculateEnchantmentInfo(
 		selectedItemRarity,
 		parseInt(selectedItemLv),
-		parseInt(selectedEnchLv)
-	).reverse();
+		parseInt(selectedEnchLv),
+		{
+			order: "desc"
+		}
+	);
 </script>
 
 <div class="filter">

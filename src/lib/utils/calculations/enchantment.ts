@@ -10,16 +10,26 @@ const itemRarities: Record<string, ItemRarity> = {
 	superior: { enchantmentRateModifier: 4, socketingRate: 90 }
 };
 
+interface CalculateEnchantmentInfoOptions {
+	maxEnchantmentSuccessChance0?: number;
+	maxEnchantmentSuccessChance10?: number;
+	order?: "asc" | "desc";
+}
+
 type EnchantmentInfo = {
 	enchantmentStone: number;
 	enchantmentSuccessChance: number;
 };
 
-// TODO: add options for sorting
-function enchantmentInfo(
+function calculateEnchantmentInfo(
 	itemRarity: string,
 	itemLv: number,
-	enchantmentLv: number
+	enchantmentLv: number,
+	{
+		maxEnchantmentSuccessChance0 = 80,
+		maxEnchantmentSuccessChance10 = 50,
+		order = "asc"
+	}: CalculateEnchantmentInfoOptions = {}
 ): EnchantmentInfo[] {
 	const result: EnchantmentInfo[] = [];
 
@@ -31,13 +41,13 @@ function enchantmentInfo(
 	}
 
 	let enchantmentRateModifier = rarity.enchantmentRateModifier;
-	let maxEnchantmentSuccessChance = 80;
+	let maxEnchantmentSuccessChance = maxEnchantmentSuccessChance0;
 
 	// if the enchantment level is 10 or above, we will half the enchantmentRateModifier
 	// this is done according to the formula
 	if (enchantmentLv >= 10) {
 		enchantmentRateModifier /= 2;
-		maxEnchantmentSuccessChance = 50;
+		maxEnchantmentSuccessChance = maxEnchantmentSuccessChance10;
 	}
 
 	// enchantmentStone has a value of the enchantment stone level needed to have a 0% success chance when enchanting
@@ -69,26 +79,15 @@ function enchantmentInfo(
 		enchantmentSuccessChance: maxEnchantmentSuccessChance
 	});
 
+	// since the array is already in a descecnding order we can just reverse it to get an ascending order
+	if (order === "desc") {
+		result.reverse();
+	}
+
+	console.log(result);
+
 	return result;
 }
-// const stoneCount = Math.ceil(maxEnchantmentSuccessChance / enchantmentRateModifier) + 1;
 
-// const firstStone = (-10 * enchantmentRateModifier + itemLv * enchantmentRateModifier) / enchantmentRateModifier;
-
-// for (let i = 0; i < stoneCount; i++) {
-// 	const enchantmentStone = firstStone + i;
-
-// 	if (enchantmentStone > 0) {
-// 		let enchantmentSuccessChance = enchantmentRateModifier * i;
-
-// 		enchantmentSuccessChance = Math.min(enchantmentSuccessChance, maxEnchantmentSuccessChance);
-
-// 		result.push({
-// 			enchantmentStone: enchantmentStone,
-// 			enchantmentSuccessChance: enchantmentSuccessChance
-// 		});
-// 	}
-// }
-
-export { enchantmentInfo };
+export { calculateEnchantmentInfo };
 export type { EnchantmentInfo };
