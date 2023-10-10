@@ -1,32 +1,28 @@
 <script lang="ts">
 	import "../styles/app.scss";
+	import MenuIcon from "$lib/components/icons/menu-icon.svelte";
 
 	import { base } from "$app/paths";
 </script>
 
-<header class="bg-neutral-950 border-b border-neutral-500 h-12 flex items-center">
-	<div class="custom-container">
+<header>
+	<button class="mobile-menu"><MenuIcon /></button>
+	<div class="center-container">
 		<nav>
-			<ul class="flex items-center gap-2">
+			<ul>
 				<li>
-					<a
-						class="text-white font-semibold px-2 py-1 rounded-md hover:bg-neutral-800 active:bg-neutral-900"
-						href="{base}/">Enchantment Calculator</a
-					>
+					<a href="{base}/">Enchantment Calculator</a>
 				</li>
 				<li>
-					<a
-						class="text-white font-semibold px-2 py-1 rounded-md hover:bg-neutral-800 active:bg-neutral-900"
-						href="{base}/enchantment-simulator">Enchantment Simulator</a
-					>
+					<a href="{base}/enchantment-simulator">Enchantment Simulator</a>
 				</li>
 			</ul>
 		</nav>
 	</div>
 </header>
-<div class="grow">
-	<div class="custom-container">
-		<main class="my-4">
+<div class="content">
+	<div class="center-container">
+		<main>
 			<slot />
 		</main>
 	</div>
@@ -39,7 +35,35 @@
 </footer> -->
 
 <style lang="scss">
-	.custom-container {
+	.content {
+		@apply grow;
+	}
+
+	.content main {
+		@apply my-4;
+	}
+
+	.center-container {
 		@apply container px-2 sm:px-0 mx-auto;
+	}
+
+	header {
+		@apply bg-neutral-950 text-white font-semibold border-b border-neutral-500 h-12 flex items-center;
+	}
+
+	header nav {
+		@apply flex items-center;
+	}
+
+	.mobile-menu {
+		@apply lg:hidden ml-2 p-1 rounded-md hover:bg-neutral-800 active:bg-neutral-900;
+	}
+
+	header nav ul {
+		@apply hidden lg:flex items-center gap-2;
+	}
+
+	header nav ul li a {
+		@apply px-2 py-1 rounded-md hover:bg-neutral-800 active:bg-neutral-900;
 	}
 </style>
