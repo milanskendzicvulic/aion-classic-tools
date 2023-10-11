@@ -1,12 +1,57 @@
 <script lang="ts">
+	import { base } from "$app/paths";
+	import { browser } from "$app/environment";
+	import { navigating } from "$app/stores";
 	import "../styles/app.scss";
 	import MenuIcon from "$lib/components/icons/menu-icon.svelte";
 
-	import { base } from "$app/paths";
+	const DRAWER_BREAKPOINT: number = 1024;
+
+	let isDrawerOpen: boolean = false;
+	let innerWidth: number = 0;
+
+	function toggleDrawer() {
+		isDrawerOpen = !isDrawerOpen;
+	}
+
+	$: if (innerWidth >= DRAWER_BREAKPOINT) {
+		isDrawerOpen = false;
+	}
+
+	// close the sidebar when navigating to a different page
+	$: if ($navigating) {
+		isDrawerOpen = false;
+	}
+
+	// when the drawer is open the scrollbar gets removed
+	$: if (browser) {
+		document.body.classList.toggle("overflow-hidden", isDrawerOpen);
+	}
 </script>
 
+<svelte:window bind:innerWidth />
+
+<!-- DRAWER -->
+<aside
+	class:translate-x-full={isDrawerOpen}
+	class="bg-neutral-950 text-white z-20 -left-3/4 transition-transform duration-300 ease-in-out sm:-left-1/2 md:-left-1/3 absolute h-full w-3/4 sm:w-1/2 md:w-1/3 lg:duration-0 lg:w-52 xl:w-60 border-r border-neutral-700"
+>
+	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias earum magni expedita provident
+	rem. Odit, doloremque officia voluptatem eius modi exercitationem veritatis iure eum nisi
+	recusandae unde saepe mollitia vero?
+</aside>
+<!-- Backdrop -->
+<!-- TODO: find a way to deal with the 4 classes in a better way, maybe a reusable Backdrop component -->
+<div
+	on:mousedown={toggleDrawer}
+	class:pointer-events-none={!isDrawerOpen}
+	class:opacity-0={!isDrawerOpen}
+	class:pointer-events-auto={isDrawerOpen}
+	class:opacity-50={isDrawerOpen}
+	class="fixed z-10 h-screen w-screen bg-black transition duration-300 ease-in-out"
+/>
 <header>
-	<button class="mobile-menu"><MenuIcon /></button>
+	<button on:click={toggleDrawer} class="mobile-menu"><MenuIcon /></button>
 	<div class="center-container">
 		<nav>
 			<ul>
@@ -48,7 +93,7 @@
 	}
 
 	header {
-		@apply bg-neutral-950 text-white font-semibold border-b border-neutral-500 h-12 flex items-center;
+		@apply bg-neutral-950 text-white font-semibold border-b border-neutral-700 h-12 flex items-center;
 	}
 
 	header nav {
