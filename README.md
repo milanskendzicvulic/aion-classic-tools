@@ -12,7 +12,7 @@ A set of tools for your everyday requirements.
 
 ## How to Contribute
 
-We invite you to contribute to the project in the following ways:
+You can contribute to the project in the following ways:
 
 - **Feature Requests**: Share your ideas for new features or improvements.
 
