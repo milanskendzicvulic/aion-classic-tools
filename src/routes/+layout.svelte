@@ -56,7 +56,10 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="{base}/">Enchantment Calculator</a>
+					<a href="{base}/">Home</a>
+				</li>
+				<li>
+					<a href="{base}/enchantment-calculator">Enchantment Calculator</a>
 				</li>
 				<li>
 					<a href="{base}/enchantment-simulator">Enchantment Simulator</a>
