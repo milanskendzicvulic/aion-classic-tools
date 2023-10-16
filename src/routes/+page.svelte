@@ -42,7 +42,14 @@
 </p>
 
 <style lang="scss">
-	/* TODO (#X, low): move this somewhere maybe,  */
+	/* TODO (#X, low): move this somewhere else, maybe. */
+	h1,
+	h2,
+	p,
+	ul {
+		@apply text-white;
+	}
+
 	h1,
 	h2 {
 		@apply font-bold border-b border-neutral-600 my-6;

@@ -121,10 +121,6 @@
 		@apply px-2 py-1 rounded-md hover:bg-neutral-800 active:bg-neutral-900;
 	}
 
-	main {
-		@apply text-white;
-	}
-
 	.drawer {
 		@apply bg-neutral-950 text-white z-20 -left-3/4 transition-transform duration-300 ease-in-out sm:-left-1/2 md:-left-1/3 absolute h-full w-3/4 sm:w-1/2 md:w-1/3 lg:duration-0 lg:w-52 xl:w-60 border-r border-neutral-800;
 	}
