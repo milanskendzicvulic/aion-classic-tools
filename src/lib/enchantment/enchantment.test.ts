@@ -1,7 +1,6 @@
 import { test, expect } from "vitest";
-import { calculateEnchantmentInfo } from "./enchantment";
-import type { EnchantmentInfo } from "./enchantment";
-
+import { enchantmentInfo } from "./enchantment";
+import type { EnchantmentInfo } from "./types";
 
 // TODO(#6): add more tests
 
@@ -16,7 +15,7 @@ test("calculateEnchantmentInfo should have only positive enchantment stone level
 	];
 
 	// const result = calculateEnchantmentInfo("eternal", 1, 0);
-	const result = calculateEnchantmentInfo("eternal", 1, 0, { maxEnchantmentSuccessChance0: 20 });
+	const result = enchantmentInfo("eternal", 1, 0, { maxEnchantmentSuccessChance0: 20 });
 
 	expect(result).toEqual(expected);
 });
@@ -47,7 +46,7 @@ test("calculateEnchantmentInfo should start with 0 success chance when stone lev
 	];
 
 	// const result = calculateEnchantmentInfo("eternal", 55, 0);
-	const result = calculateEnchantmentInfo("eternal", 55, 0, {
+	const result = enchantmentInfo("eternal", 55, 0, {
 		maxEnchantmentSuccessChance0: 30
 	});
 
@@ -78,7 +77,7 @@ test("calculateEnchantmentInfo should cap at 50% for eternal items with enchantm
 		{ enchantmentStone: 64, enchantmentSuccessChance: 14.25 },
 		{ enchantmentStone: 65, enchantmentSuccessChance: 15 }
 	];
-	const result = calculateEnchantmentInfo("eternal", 55, 11, {
+	const result = enchantmentInfo("eternal", 55, 11, {
 		maxEnchantmentSuccessChance10: 15
 	});
 

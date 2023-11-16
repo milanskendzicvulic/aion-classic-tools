@@ -1,0 +1,1 @@
+export { enchantmentInfo } from "./enchantment";

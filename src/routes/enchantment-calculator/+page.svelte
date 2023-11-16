@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { calculateEnchantmentInfo } from "$lib/utils/calculations/enchantment";
+	import { enchantmentInfo } from "$lib/enchantment";
 
 	// max item level to be displayed in the html select
 	const MAX_ITEM_LEVEL: number = 55;
@@ -25,7 +25,7 @@
 	let selectedEnchLv: string = "";
 
 	// TODO: better way to do parsing
-	$: results = calculateEnchantmentInfo(
+	$: results = enchantmentInfo(
 		selectedItemRarity,
 		parseInt(selectedItemLv),
 		parseInt(selectedEnchLv),

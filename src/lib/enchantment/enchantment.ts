@@ -1,27 +1,13 @@
-type ItemRarity = {
-	enchantmentRateModifier: number;
-	socketingRate: number;
-};
+import type { EnchantmentInfo } from "./types";
+import { itemRarities } from "./constants";
 
-const itemRarities: Record<string, ItemRarity> = {
-	eternal: { enchantmentRateModifier: 1.5, socketingRate: 60 },
-	fabled: { enchantmentRateModifier: 2, socketingRate: 70 },
-	heroic: { enchantmentRateModifier: 3, socketingRate: 80 },
-	superior: { enchantmentRateModifier: 4, socketingRate: 90 }
-};
-
-interface CalculateEnchantmentInfoOptions {
+interface EnchantmentInfoOptions {
 	maxEnchantmentSuccessChance0?: number;
 	maxEnchantmentSuccessChance10?: number;
 	order?: "asc" | "desc";
 }
 
-type EnchantmentInfo = {
-	enchantmentStone: number;
-	enchantmentSuccessChance: number;
-};
-
-function calculateEnchantmentInfo(
+function enchantmentInfo(
 	itemRarity: string,
 	itemLv: number,
 	enchantmentLv: number,
@@ -29,7 +15,7 @@ function calculateEnchantmentInfo(
 		maxEnchantmentSuccessChance0 = 80,
 		maxEnchantmentSuccessChance10 = 50,
 		order = "asc"
-	}: CalculateEnchantmentInfoOptions = {}
+	}: EnchantmentInfoOptions = {}
 ): EnchantmentInfo[] {
 	const result: EnchantmentInfo[] = [];
 
@@ -87,5 +73,4 @@ function calculateEnchantmentInfo(
 	return result;
 }
 
-export { calculateEnchantmentInfo };
-export type { EnchantmentInfo };
+export { enchantmentInfo };
