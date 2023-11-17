@@ -1,2 +1,2 @@
 export { schedule } from "./constants";
-export { scheduleDays } from "./schedule";
+export { scheduleDays, scheduleHours, scheduleEvents } from "./schedule";
