@@ -43,6 +43,7 @@
 			<li><a href="{base}/">Home</a></li>
 			<li><a href="{base}/enchantment-calculator">Enchantment Calculator</a></li>
 			<li><a href="{base}/enchantment-simulator">Enchantment Simulator</a></li>
+			<li><a href="{base}/schedule">Schedule</a></li>
 		</ul>
 	</nav>
 </aside>
@@ -61,15 +62,10 @@
 	<div class="center-container">
 		<nav>
 			<ul>
-				<li>
-					<a href="{base}/">Home</a>
-				</li>
-				<li>
-					<a href="{base}/enchantment-calculator">Enchantment Calculator</a>
-				</li>
-				<li>
-					<a href="{base}/enchantment-simulator">Enchantment Simulator</a>
-				</li>
+				<li><a href="{base}/">Home</a></li>
+				<li><a href="{base}/enchantment-calculator">Enchantment Calculator</a></li>
+				<li><a href="{base}/enchantment-simulator">Enchantment Simulator</a></li>
+				<li><a href="{base}/schedule">Schedule</a></li>
 			</ul>
 		</nav>
 	</div>
