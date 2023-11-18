@@ -62,6 +62,10 @@
 		@apply sticky left-0 z-10 border border-t-0 border-neutral-700;
 	}
 
+	tbody tr td div {
+		@apply whitespace-nowrap;
+	}
+
 	td,
 	th {
 		@apply p-2 text-left;
