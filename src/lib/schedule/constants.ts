@@ -14,8 +14,8 @@ const schedule: EventSchedule = {
 		"21:00": [],
 		"22:00": [],
 		"23:00": [],
-		"00:00": [],
-		"01:00": []
+		"0:00": [],
+		"1:00": []
 	},
 	Tuesday: {
 		"12:00": [],
@@ -30,8 +30,8 @@ const schedule: EventSchedule = {
 		"21:00": [],
 		"22:00": [],
 		"23:00": [],
-		"00:00": [],
-		"01:00": []
+		"0:00": [],
+		"1:00": []
 	},
 	Wednesday: {
 		"12:00": [],
@@ -41,13 +41,13 @@ const schedule: EventSchedule = {
 		"16:00": [],
 		"17:00": [],
 		"18:00": [],
-		"19:00": [ "Sulphur Fortress", "Siel's West Fortress", "Siel's East Fortress"],
+		"19:00": ["Sulphur Fortress", "Siel's West Fortress", "Siel's East Fortress"],
 		"20:00": [],
 		"21:00": [],
 		"22:00": ["Gelkmaros Siege"],
 		"23:00": [],
-		"00:00": [],
-		"01:00": []
+		"0:00": [],
+		"1:00": []
 	},
 	Thursday: {
 		"12:00": [],
@@ -62,8 +62,8 @@ const schedule: EventSchedule = {
 		"21:00": [],
 		"22:00": ["Inggison Siege"],
 		"23:00": [],
-		"00:00": [],
-		"01:00": []
+		"0:00": [],
+		"1:00": []
 	},
 	Friday: {
 		"12:00": [],
@@ -78,8 +78,8 @@ const schedule: EventSchedule = {
 		"21:00": [],
 		"22:00": [],
 		"23:00": [],
-		"00:00": [],
-		"01:00": []
+		"0:00": [],
+		"1:00": []
 	},
 	Saturday: {
 		"12:00": [],
@@ -90,12 +90,12 @@ const schedule: EventSchedule = {
 		"17:00": [],
 		"18:00": [],
 		"19:00": ["Roah Fortress", "Asteria Fortress"],
-		"20:00": ["Arena of Glory", ],
+		"20:00": ["Arena of Glory"],
 		"21:00": [],
 		"22:00": ["Divine Fortress"],
 		"23:00": [],
-		"00:00": [],
-		"01:00": []
+		"0:00": [],
+		"1:00": []
 	},
 	Sunday: {
 		"12:00": [],
@@ -106,12 +106,12 @@ const schedule: EventSchedule = {
 		"17:00": [],
 		"18:00": [],
 		"19:00": ["Miren Fortress", "Kysis Fortress", "Krotan Fortress"],
-		"20:00": ["Arena of Glory", ],
+		"20:00": ["Arena of Glory"],
 		"21:00": [],
 		"22:00": ["Inggison Siege", "Gelkmaros Siege"],
 		"23:00": [],
-		"00:00": [],
-		"01:00": []
+		"0:00": [],
+		"1:00": []
 	}
 };
 

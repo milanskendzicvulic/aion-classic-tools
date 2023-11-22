@@ -1,7 +1,47 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
 	import { schedule, scheduleDays, scheduleEvents, scheduleHours } from "$lib/schedule";
+	import { onMount } from "svelte";
+
+	const utc = "12:00";
+
+	const clientTime = new Date();
+
+	let littleTest = "Server";
+
+	if (browser) {
+		setTimeout(() => {
+			littleTest = "Client";
+		}, 3000);
+	}
+
+	function offset(hours: string, clientTime: Date): string {
+		let o = clientTime.getTimezoneOffset();
+
+		const d = new Date();
+
+		// console.log(parseInt(hours, 10));
+
+		// d.setUTCHours(parseInt(hours, 10));
+
+		console.log(d);
+
+		return "";
+	}
+
+	onMount(() => {
+		let utcTime = document.getElementById("utcTime");
+
+		let offsetTime = new Date().getTimezoneOffset();
+
+		const utcDate = new Date(`January 1, 2000 ${utcTime?.innerHTML} GMT+0100`);
+	});
 </script>
 
+<p>{littleTest}</p>
+
+<p id="utcTime" class="text-white">{utc}</p>
+<p id="userTime">{offset("12:00", new Date())}</p>
 <div class="table-wrapper">
 	<table>
 		<thead>
