@@ -1,47 +1,10 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
-	import { schedule, scheduleDays, scheduleEvents, scheduleHours } from "$lib/schedule";
-	import { onMount } from "svelte";
-
-	const utc = "12:00";
-
-	const clientTime = new Date();
-
-	let littleTest = "Server";
-
-	if (browser) {
-		setTimeout(() => {
-			littleTest = "Client";
-		}, 3000);
-	}
-
-	function offset(hours: string, clientTime: Date): string {
-		let o = clientTime.getTimezoneOffset();
-
-		const d = new Date();
-
-		// console.log(parseInt(hours, 10));
-
-		// d.setUTCHours(parseInt(hours, 10));
-
-		console.log(d);
-
-		return "";
-	}
-
-	onMount(() => {
-		let utcTime = document.getElementById("utcTime");
-
-		let offsetTime = new Date().getTimezoneOffset();
-
-		const utcDate = new Date(`January 1, 2000 ${utcTime?.innerHTML} GMT+0100`);
-	});
+	/* TODO: make a function that takes in a hour in string format, ie "18:00", 
+		and if the component is loaded in a browser it should format the time to "18:00 (20:00)"
+		where 20:00 is the users time
+	*/
 </script>
 
-<p>{littleTest}</p>
-
-<p id="utcTime" class="text-white">{utc}</p>
-<p id="userTime">{offset("12:00", new Date())}</p>
 <div class="table-wrapper">
 	<table>
 		<thead>
@@ -57,7 +20,67 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each scheduleHours() as hour}
+			<tr>
+				<th>19:00</th>
+				<td />
+				<td />
+				<td>
+					<div>Sulphur Fortress</div>
+					<div>Siel's West Fortress</div>
+					<div>Siel's East Fortress</div>
+				</td>
+				<td />
+				<td />
+				<td>
+					<div>Roah Fortress</div>
+					<div>Asteria Fortress</div>
+				</td>
+				<td>
+					<div>Miren Fortress</div>
+					<div>Kysis Fortress</div>
+					<div>Krotan Fortress</div>
+				</td>
+			</tr>
+			<tr>
+				<th>20:00</th>
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+			</tr>
+			<tr>
+				<th>21:00</th>
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+			</tr>
+			<tr>
+				<th>22:00</th>
+				<td />
+				<td />
+				<td>
+					<div>Gelkmaros Siege</div>
+				</td>
+				<td>
+					<div>Inggison Siege</div>
+				</td>
+				<td />
+				<td>
+					<div>Divine Fortress</div>
+				</td>
+				<td>
+					<div>Inggison Siege</div>
+					<div>Gelkmaros Siege</div>
+				</td>
+			</tr>
+			<!-- {#each scheduleHours() as hour}
 				<tr>
 					<th>{hour}</th>
 					{#each scheduleDays() as day}
@@ -68,7 +91,7 @@
 						</td>
 					{/each}
 				</tr>
-			{/each}
+			{/each} -->
 		</tbody>
 	</table>
 </div>
