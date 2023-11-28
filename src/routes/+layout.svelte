@@ -97,6 +97,11 @@
 		@apply container px-2 sm:px-0 mx-auto;
 	}
 
+	ul,
+	li {
+		@apply m-0;
+	}
+
 	header {
 		@apply bg-neutral-950 text-white font-semibold border-b border-neutral-700 h-12 flex items-center;
 	}

@@ -1,10 +1,60 @@
 <script lang="ts">
-	/* TODO: make a function that takes in a hour in string format, ie "18:00", 
-		and if the component is loaded in a browser it should format the time to "18:00 (20:00)"
-		where 20:00 is the users time
-	*/
+	import { browser } from "$app/environment";
+	import { clientTime } from "$lib/schedule";
+
+	// TODO: client might be using a VPN, would be good to add a switch for UTC/Client time
+
+	function displayTime(time: string): string {
+		if (!browser) {
+			return time;
+		}
+
+		const ct = clientTime(time);
+
+		return `${ct}`;
+	}
+
+	const arenaOfDiscipline = `Daily from ${displayTime("12:00")} to ${displayTime("00:00")}`;
+	const arenaOfChaos = `Daily from ${displayTime("12:00")} to ${displayTime("00:00")}`;
+	const arenaOfGlory = `Saturday and Sunday from ${displayTime("18:00")} to ${displayTime(
+		"19:00"
+	)}`;
+
+	const dredgion = `Daily from ${displayTime("10:00")} to ${displayTime("12:00")}, ${displayTime(
+		"16:00"
+	)} to ${displayTime("18:00")}, ${displayTime("22:00")} to ${displayTime("00:00")}`;
+	const tiarkh = `Daily from ${displayTime("18:00")} to ${displayTime("20:00")}`;
 </script>
 
+<h1>Arenas</h1>
+<ul>
+	<li>
+		<strong>Arena of Discipline:</strong>
+		<span>{arenaOfDiscipline}</span>
+	</li>
+	<li>
+		<strong>Arena of Chaos:</strong>
+		<span>{arenaOfChaos}</span>
+	</li>
+	<li>
+		<strong>Arena of Glory:</strong>
+		<span>{arenaOfGlory}</span>
+	</li>
+</ul>
+<h1>PvP Dungeons</h1>
+<ul>
+	<li>
+		<strong>Dredgion:</strong>
+		<span>{dredgion}</span>
+	</li>
+	<li>
+		<strong>Tiarkh Testing Lab:</strong>
+		<span>
+			{tiarkh}
+		</span>
+	</li>
+</ul>
+<h1>Sieges</h1>
 <div class="table-wrapper">
 	<table>
 		<thead>
@@ -21,7 +71,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<th>19:00</th>
+				<th>{displayTime("17:00")}</th>
 				<td />
 				<td />
 				<td>
@@ -42,7 +92,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th>20:00</th>
+				<th>{displayTime("18:00")}</th>
 				<td />
 				<td />
 				<td />
@@ -52,7 +102,7 @@
 				<td />
 			</tr>
 			<tr>
-				<th>21:00</th>
+				<th>{displayTime("19:00")}</th>
 				<td />
 				<td />
 				<td />
@@ -62,7 +112,7 @@
 				<td />
 			</tr>
 			<tr>
-				<th>22:00</th>
+				<th>{displayTime("20:00")}</th>
 				<td />
 				<td />
 				<td>

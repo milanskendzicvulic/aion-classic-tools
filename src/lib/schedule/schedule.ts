@@ -1,24 +1,38 @@
-import { schedule } from "./constants";
+// TODO: document
 
-function scheduleDays(): string[] {
-	return Object.keys(schedule);
+function clientTime(utcTime: string): string {
+	const clientOffsetTime = new Date().getTimezoneOffset();
+
+	// if the clients time zone is the same as UTC
+	if (clientOffsetTime == 0) {
+		return utcTime;
+	} else {
+		return internalClientTime(utcTime, clientOffsetTime);
+	}
 }
 
-function scheduleHours(): string[] {
-	const hours = new Set<string>();
+function internalClientTime(utcTime: string, clientOffsetTime: number): string {
+	const [hour, minute] = utcTime.split(":");
 
-	for (const day in schedule) {
-		for (const hour in schedule[day]) {
-			hours.add(hour);
-		}
+	const utc = new Date();
+	utc.setUTCHours(parseInt(hour), 10);
+	utc.setUTCMinutes(parseInt(minute), 10);
+
+	const clientLocalTime = new Date(utc.getTime() - clientOffsetTime * 60000);
+
+	const resultHour = clientLocalTime.getHours().toString();
+	let resultMinute = clientLocalTime.getMinutes().toString();
+
+	// if (clientLocalTime.getHours() < 10) {
+	// 	resultHour = "0" + resultHour;
+	// }
+
+	// prepend a '0' if the minute is a single digit
+	if (clientLocalTime.getMinutes() < 10) {
+		resultMinute = "0" + resultMinute;
 	}
 
-	// not sorted because 00:00 and 01:00 should appear after 23:00
-	return Array.from(hours);
+	return `${resultHour}:${resultMinute}`;
 }
 
-function scheduleEvents(day: string, hour: string): string[] {
-	return schedule[day][hour];
-}
-
-export { scheduleDays, scheduleHours, scheduleEvents };
+export { clientTime, internalClientTime };
