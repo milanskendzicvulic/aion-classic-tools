@@ -26,6 +26,8 @@
 	const tiarkh = `Daily from ${displayTime("18:00")} to ${displayTime("20:00")}`;
 </script>
 
+<p>{`test: ${new Date().getTimezoneOffset()}`}</p>
+
 <h1>Arenas</h1>
 <ul>
 	<li>
