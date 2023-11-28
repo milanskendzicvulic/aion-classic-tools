@@ -123,11 +123,11 @@
 	}
 
 	.drawer {
-		@apply bg-neutral-950 text-white z-20 -left-3/4 transition-transform duration-300 ease-in-out sm:-left-1/2 md:-left-1/3 absolute h-full w-3/4 sm:w-1/2 md:w-1/3 lg:duration-0 lg:w-52 xl:w-60 border-r border-neutral-800;
+		@apply bg-neutral-950 text-white z-40 -left-3/4 transition-transform duration-300 ease-in-out sm:-left-1/2 md:-left-1/3 absolute h-full w-3/4 sm:w-1/2 md:w-1/3 lg:duration-0 lg:w-52 xl:w-60 border-r border-neutral-800;
 	}
 
 	.backdrop {
-		@apply fixed z-10 h-screen w-screen bg-black transition duration-300 ease-in-out;
+		@apply fixed z-30 h-screen w-screen bg-black transition duration-300 ease-in-out;
 	}
 
 	.mobile-nav {
