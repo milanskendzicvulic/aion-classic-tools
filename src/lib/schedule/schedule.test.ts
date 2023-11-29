@@ -1,6 +1,5 @@
 import { test, expect } from "vitest";
 import { internalClientTime } from "./schedule";
-// TODO: Add tests for internalClientTime
 
 const testCases = [
 	{ inputTime: "12:00", timeOffset: -180, expected: "15:00" },

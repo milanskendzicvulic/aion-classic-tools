@@ -2,9 +2,6 @@ import { test, expect } from "vitest";
 import { enchantmentInfo } from "./enchantment";
 import type { EnchantmentInfo } from "./types";
 
-// TODO(#6): add more tests
-
-
 test("calculateEnchantmentInfo should have only positive enchantment stone levels", () => {
 	const expected: EnchantmentInfo[] = [
 		{ enchantmentStone: 1, enchantmentSuccessChance: 15 },

@@ -2,8 +2,6 @@
 	import { browser } from "$app/environment";
 	import { clientTime } from "$lib/schedule";
 
-	// TODO: client might be using a VPN, would be good to add a switch for UTC/Client time
-
 	function displayTime(time: string): string {
 		if (!browser) {
 			return time;

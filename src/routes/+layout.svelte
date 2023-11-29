@@ -32,7 +32,7 @@
 
 <svelte:window bind:innerWidth />
 
-<!-- TODO(#X, medium): Make a drawer component, and move all the styles there -->
+<!-- TODO(#8): Make a drawer component, and move all the styles there -->
 <!-- DRAWER -->
 <aside class:translate-x-full={isDrawerOpen} class="drawer">
 	<nav class="mobile-nav">

@@ -5,8 +5,10 @@
 	const MAX_ITEM_LEVEL: number = 55;
 
 	// max item enchantment level to be displayed in the html select
-	// TODO(#4): Different levels for different rarities
+	// TODO(#9): Different levels for different rarities
 	const MAX_ITEM_ENCH_LEVEL: number = 15;
+
+	// TODO(#10): Refactor to imperative, and extract as a module
 
 	// Is used to display item levels in the select, in descending order.
 	// ie. 20, 19, 18, 17,...0

@@ -1,7 +1,7 @@
 import type { EnchantmentInfo } from "./types";
 import { itemRarities } from "./constants";
 
-// TODO: document
+// TODO(#11): document
 
 interface EnchantmentInfoOptions {
 	maxEnchantmentSuccessChance0?: number;
