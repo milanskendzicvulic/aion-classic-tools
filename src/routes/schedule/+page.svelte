@@ -14,16 +14,16 @@
 		return `${ct}`;
 	}
 
-	const arenaOfDiscipline = `Daily from ${displayTime("12:00")} to ${displayTime("00:00")}`;
-	const arenaOfChaos = `Daily from ${displayTime("12:00")} to ${displayTime("00:00")}`;
-	const arenaOfGlory = `Saturday and Sunday from ${displayTime("18:00")} to ${displayTime(
-		"19:00"
+	const arenaOfDiscipline = `Daily from ${displayTime("13:00")} to ${displayTime("01:00")}`;
+	const arenaOfChaos = `Daily from ${displayTime("13:00")} to ${displayTime("01:00")}`;
+	const arenaOfGlory = `Saturday and Sunday from ${displayTime("19:00")} to ${displayTime(
+		"20:00"
 	)}`;
 
-	const dredgion = `Daily from ${displayTime("10:00")} to ${displayTime("12:00")}, ${displayTime(
-		"16:00"
-	)} to ${displayTime("18:00")}, ${displayTime("22:00")} to ${displayTime("00:00")}`;
-	const tiarkh = `Daily from ${displayTime("18:00")} to ${displayTime("20:00")}`;
+	const dredgion = `Daily from ${displayTime("11:00")} to ${displayTime("13:00")}, ${displayTime(
+		"17:00"
+	)} to ${displayTime("19:00")}, ${displayTime("23:00")} to ${displayTime("01:00")}`;
+	const tiarkh = `Daily from ${displayTime("19:00")} to ${displayTime("21:00")}`;
 </script>
 
 <h1>Arenas</h1>
@@ -71,7 +71,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<th>{displayTime("17:00")}</th>
+				<th>{displayTime("18:00")}</th>
 				<td />
 				<td />
 				<td>
@@ -92,16 +92,6 @@
 				</td>
 			</tr>
 			<tr>
-				<th>{displayTime("18:00")}</th>
-				<td />
-				<td />
-				<td />
-				<td />
-				<td />
-				<td />
-				<td />
-			</tr>
-			<tr>
 				<th>{displayTime("19:00")}</th>
 				<td />
 				<td />
@@ -113,6 +103,16 @@
 			</tr>
 			<tr>
 				<th>{displayTime("20:00")}</th>
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+				<td />
+			</tr>
+			<tr>
+				<th>{displayTime("21:00")}</th>
 				<td />
 				<td />
 				<td>
